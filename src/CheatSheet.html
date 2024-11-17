@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome file</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="cheat-sheet">Cheat-Sheet</h1>
+<p>Before you solely rely on this cheat-sheet, <strong>try to gather own information</strong> about the commands with the use of the man-pages or the “help” command (like this: <strong>“&lt;command&gt; --help”</strong> or <strong>“man &lt;command&gt;”</strong>)</p>
+<h2 id="commands">Commands</h2>
+<h4 id="ssh">ssh</h4>
+<p><code>ssh &lt;username&gt;@&lt;ip_address&gt;</code></p>
+<blockquote>
+<p><code>-p &lt;port&gt;</code> Specify a port<br>
+<code>-i &lt;keyfile&gt;</code> Use a keyfile for authentication</p>
+</blockquote>
+<p><sub>Ssh (SSH client) is a program for logging into a remote machine and for executing commands on a remote machine.</sub></p>
+<h4 id="exit">exit</h4>
+<p><code>exit</code><br>
+<sub>Closes the current shell or ssh connection.</sub></p>
+<h4 id="task">task</h4>
+<p><code>task</code><br>
+<sub>Prints the task of the current level.</sub></p>
+<h4 id="hint">hint</h4>
+<p><code>hint</code><br>
+<sub>Gives a hint for the current level.</sub></p>
+<h4 id="man">man</h4>
+<p><code>man &lt;command&gt;</code><br>
+<sub>Provides an in-depth description of a command and its usage.</sub></p>
+<h4 id="ls">ls</h4>
+<p><code>ls &lt;directory_path&gt;</code></p>
+<blockquote>
+<p><code>-a</code> Get all files<br>
+<code>-l</code> List properties</p>
+</blockquote>
+<p><sub>List information about the FILEs (the current directory by default).</sub></p>
+<h4 id="cat">cat</h4>
+<p><code>cat &lt;file1&gt; &lt;file2&gt; ...</code><br>
+<sub>Prints the content of a file to the terminal output.</sub></p>
+<h4 id="cd">cd</h4>
+<p><code>cd &lt;directory_path&gt;</code></p>
+<blockquote>
+<p><code>~</code> Go to home directory<br>
+<code>..</code> Go one directory up</p>
+</blockquote>
+<p><sub>With this command you can change directories.</sub></p>
+<h4 id="find">find</h4>
+<p><code>find &lt;directory_path&gt;</code></p>
+<blockquote>
+<p><code>-name &lt;file/directory name&gt;</code> Search for name<br>
+<code>-size &lt;size&gt;[c,b,n]</code> Search for size [c: Bytes, d: 512-Byte Block, n: default]<br>
+<code>-user &lt;username&gt;</code> Search for owner username<br>
+<code>-group &lt;groupname&gt;</code> Search for owner group name</p>
+</blockquote>
+<p><sub>Searches the provided directory (and child directories) for matching parameters (size, owner, name, etc.).</sub></p>
+<h4 id="grep">grep</h4>
+<p><code>grep &lt;pattern&gt;</code><br>
+<sub>Searches for a pattern in a file or from the terminal output.</sub></p>
+<h4 id="uniq">uniq</h4>
+<p><code>uniq</code><br>
+<sub>Filters adjacent matching lines from files or the terminal input. (Filters out multiple occurrences)</sub></p>
+<h4 id="sort">sort</h4>
+<p><code>sort</code><br>
+<sub>Sort terminal output/files (alphabetically, numerically, etc.).</sub></p>
+<h4 id="base64">base64</h4>
+<p><code>base64 &lt;file&gt;</code></p>
+<blockquote>
+<p><code>-d</code> Decode</p>
+</blockquote>
+<p><sub>Encode/decode strings/files with base64.</sub></p>
+<h4 id="tr">tr</h4>
+<p><code>tr &lt;from&gt; &lt;to&gt;</code><br>
+<sub>Translate a string from terminal input/files with a given string. (E.g. use a custom alphabet)</sub></p>
+<h4 id="john">john</h4>
+<p><code>john --wordlist=&lt;wordlist&gt; &lt;hashfile&gt;</code></p>
+<blockquote>
+<p><code>--show &lt;hashfile&gt;</code> Show result of cracked hash.</p>
+</blockquote>
+<p><sub>Crack hashes using a brute force-attack.</sub></p>
+<h4 id="strings">strings</h4>
+<p><code>strings &lt;binary_file&gt;</code><br>
+<sub>Search for printable strings inside a binary.</sub></p>
+<h4 id="nc">nc</h4>
+<p><code>nc &lt;address&gt; &lt;port&gt;</code><br>
+<sub>Network tool to establish connections on a lower layer.</sub></p>
+<h4 id="tar">tar</h4>
+<p><code>tar &lt;flags&gt; &lt;file/folder/archive&gt;</code></p>
+<blockquote>
+<p><code>-xf</code> Unpack archive<br>
+<code>-cf</code> Pack archive</p>
+</blockquote>
+<p><sub>Create archive from files/folders or unpack archives to receive files.</sub></p>
+<h4 id="gzip">gzip</h4>
+<p><code>gzip &lt;file/folder/archive&gt;</code></p>
+<blockquote>
+<p><code>-d</code> Decompress archive</p>
+</blockquote>
+<p><sub>Compress/uncompress files/folders.</sub></p>
+<h4 id="curl">curl</h4>
+<p><code>curl &lt;URL&gt;</code></p>
+<blockquote>
+<p><code>-I</code> Print just the HEADER<br>
+<code>-i</code> Include the HEADER</p>
+</blockquote>
+<p><sub>Network tool for transferring data from/to servers using URLs.</sub></p>
+<h2 id="misc">MISC</h2>
+<h4 id="pipe">Pipe</h4>
+<p><code>&lt;command_1&gt; | &lt;command_2&gt; | ...</code><br>
+<sub>A pipe “|” allows to redirect output from command_1 to command_2, so command_2 can process the output.<br>
+E.g: <code>cat &lt;file&gt; | grep &lt;pattern&gt;</code><br>
+</sub></p>
+<h4 id="output-redirection">Output Redirection</h4>
+<p><code>[1,2]&gt;&lt;output_path&gt;</code><br>
+<sub>The terminal has multiple output-streams. That means e.g. “normal output” (1) and “errors” (2) can be separated.<br>
+E.g: <code>find / -name &lt;name&gt; 2&gt;/dev/null</code> redirects the error to /dev/null (trash)<br>
+</sub></p>
+<h4 id="renaming-files">Renaming files</h4>
+<p><code>mv &lt;file_1&gt; &lt;file_2&gt;</code><br>
+<sub>To rename files, it is common practice to just use the move-command (mv).<br>
+E.g: <code>mv &lt;old_filename&gt; &lt;new_filename&gt;</code><br>
+</sub></p>
+</div>
+</body>
+
+</html>

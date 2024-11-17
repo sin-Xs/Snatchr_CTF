@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>README</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><p><img src="https://i.postimg.cc/52Lzcmb1/snatchr-logo.png" alt="snatchr_logo"></p>
+<p>Welcome to the <strong>Snatchr CTF</strong>,<br>
+This set of challenges was inspired by <a href="https://overthewire.org/wargames/bandit/"><strong>OverTheWire - Bandit</strong></a>.</p>
+<p><strong>No prior “hacking” knowledge</strong> is required to master the challenges, as long as you <strong>read the help/man pages</strong> (even Google, etc. can be used) for the commands you have trouble with.</p>
+<p>This CTF was designed to get to know the general Linux-Environment and maybe even learn something along the way.</p>
+<p>I hope you’ll have fun!</p>
+<h2 id="getting-started">Getting started</h2>
+<h4 id="import-the-docker-image">Import the docker image:</h4>
+<p><code>sudo docker load -i &lt;image.tar&gt;</code><br>
+<sub>Substitute <strong>&lt;image.tar&gt;</strong> with the file that contains the docker image.</sub></p>
+<h4 id="starting-the-docker-container">Starting the docker container:</h4>
+<p><code>sudo docker run -td -p &lt;desired_port&gt;:22 --name &lt;container_name&gt; &lt;docker_image&gt;</code><br>
+<sub><strong>&lt;desired_port&gt;</strong> should be a port number that is not used on your system. I recommend <strong>2222</strong>. <strong>&lt;container_name&gt;</strong> can be anything. It is used to refer to the docker container later - if needed. And <strong>&lt;docker_image&gt;</strong> is the name of the image that was installed by the first command. If you don’t know the name (usually: <strong>snatchr_ctf:&lt;version_number&gt;</strong>) use the following command: <code>sudo docker image ls</code>.</sub></p>
+<h4 id="log-into-the-first-level">Log into the first level:</h4>
+<p><code>ssh snatchr_0@localhost -p &lt;desired_port&gt;</code></p>
+<blockquote>
+<p><sub>Here is a short explanation of the ssh-command: <code>ssh &lt;username&gt;@&lt;address&gt; -p &lt;port&gt;</code><br>
+<strong>&lt;username&gt;</strong> is the name of the user that you connect to.<br>
+<strong>&lt;address&gt;</strong> Usually you will see an IP-address here. In our case <strong>“localhost”</strong> is used. Localhost refers to a special IP-address that connects us to the machine we use the command on.<br>
+<strong>&lt;port&gt;</strong> Rarely you need to use “-p &lt;port&gt;”, because as long as the port is <strong>22</strong>, it is not needed. In our case we use a special<br>
+port (e.g. <strong>2222</strong>).</sub></p>
+</blockquote>
+<p><sub>The first time you connect to the container, a message will pop up, asking you for a fingerprint. Accept with <strong>“yes”</strong>. Usually it will only be displayed one time.<br>
+The password for the first level is: <strong>snatchr_0</strong></sub></p>
+<h2 id="while-playing">While playing</h2>
+<p>If you find the password, I recommend you to <strong>take notes</strong>. In case you close and wanna come back to the level, you will need the password again.</p>
+<p>After finishing a level, type <strong>“exit”</strong> to close the connection. Then establish another ssh connection for the next user like this: <code>ssh &lt;username&gt;@localhost -p 2222</code>, where &lt;username&gt; is the next levels user (like <strong>snatchr_15</strong> for level 15).<br>
+When asked, use the password you gathered.</p>
+<p>At any time, you can receive the password of the user you have access to by typing the command: <code>cat /etc/snatchr_pw/&lt;username&gt;</code>, where <strong>&lt;username&gt;</strong> is the name of the levels user (e.g <strong>snatchr_1</strong>).</p>
+<h2 id="after-playing">After playing</h2>
+<p>… it is recommended to remove the docker container (save the password!):<br>
+<code>sudo docker rm -f &lt;container_name&gt;</code><br>
+<sub><strong>&lt;container_name&gt;</strong> is the name you have specified in the <strong>“docker run”</strong> command.</sub></p>
+<hr>
+<hr>
+</div>
+</body>
+
+</html>
